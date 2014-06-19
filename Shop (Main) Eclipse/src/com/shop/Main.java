@@ -29,12 +29,12 @@ public class Main {
 //        query = Query.addProduct("iphone5c",800,true);
 
 
-//        query = Query.countProduct();
+        query = Query.groupProducts();
 
-        query = Query.orderProducts("products","name");
+//        query = Query.orderProducts("products","name");
 
         System.out.println(query);
-        
+
         Connection.getInstance().showData(query);
 	       
 	}

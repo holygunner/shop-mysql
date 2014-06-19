@@ -48,6 +48,13 @@ public class Connection {
         statement = connection.createStatement();
         resultSet = statement.executeQuery(query);
 
+        if (query.contains("group by")) {
+            while (resultSet.next()) {
+            System.out.println(resultSet.getString("name") + " - " + resultSet.getString("price") + "$" + " - "
+            + resultSet.getString("sum(price)"));
+            }
+        }   else {
+
         if (query.contains("count")) {
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("count(products.name)") + " product(s) is/are found");
@@ -67,7 +74,7 @@ public class Connection {
         }
         }
         }
-
+        }
         statement.close();
     }
 

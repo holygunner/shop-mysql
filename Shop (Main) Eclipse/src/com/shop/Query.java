@@ -60,7 +60,11 @@ public class Query {
 
 
 
-    protected static void groupProducts() {         // join в процессе
+
+    protected static String groupProducts() {        
+        return " select name,price, sum(price)\n" +
+                " from products\n" +
+                " group by name,price";
     }
 
 
